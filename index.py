@@ -145,7 +145,8 @@ def get_guid():
     }
     
     params = (
-        ('1537511137854', ''),
+        # Gets the current time since epoch of 1901, 1, 1
+	    (time.time() * 1000, ''),
     )
     
     response = session.post('https://'+url+'/Default.asmx/GetUserInfo', headers=headers, params=params)
